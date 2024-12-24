@@ -38,13 +38,6 @@ public class AuthService {
         return userOutDTO;
     }
 
-    public void registerAdmin(MyUser myUser) {
-        myUser.setRole("ADMIN");
-        String hashPassword = new BCryptPasswordEncoder().encode(myUser.getPassword());
-        myUser.setPassword(hashPassword);
-        authRepository.save(myUser);
-    }
-
     public void activeBankAccountByAdmin(Integer admin_id,Integer account_id) {
         Account account = accountRepository.findAccountById(account_id);
         if (account == null) {
