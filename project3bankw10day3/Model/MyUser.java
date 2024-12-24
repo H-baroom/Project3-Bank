@@ -70,12 +70,6 @@ public class MyUser implements UserDetails {
         this.email = email;
         this.role = role;
     }
-    public MyUser(@NotEmpty(message = "username not valid") @Size(min = 4,max = 10,message = " Length must be between 4 and 10 characters.") String username, String hashPassword, @NotEmpty(message = "name not valid") @Size(min = 2,max = 20,message = " Length must be between 4 and 10 characters.") String name, @NotEmpty(message = "email not valid") @Email(message = "Must be a valid email format") String email) {
-        this.username = username;
-        this.password = hashPassword;
-        this.name = name;
-        this.email = email;
-    }
 
 
     @Override
