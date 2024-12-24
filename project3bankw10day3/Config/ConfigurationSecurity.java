@@ -49,7 +49,6 @@ public class ConfigurationSecurity {
                 .requestMatchers("/api/v1/employee/update").hasAuthority("EMPLOYEE")
                 .requestMatchers("/api/v1/employee/delete").hasAuthority("EMPLOYEE")
                 .requestMatchers("/api/v1/employee/activation-by-employee").hasAuthority("EMPLOYEE")
-                .requestMatchers("/api/v1/user/register-admin").permitAll()
                 .requestMatchers("/api/v1/user/activation-by-admin").hasAuthority("ADMIN")
                 .requestMatchers("/api/v1/user/get-all-users").hasAuthority("ADMIN")
                 .requestMatchers("/api/v1/user/block-account-by-admin").hasAuthority("ADMIN")
