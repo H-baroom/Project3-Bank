@@ -19,12 +19,6 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
     private final AuthService authService;
 
-    @PostMapping("/register-admin")
-    public ResponseEntity registerAdmin(@RequestBody @Valid MyUser myUser){
-        authService.registerAdmin(myUser);
-        return ResponseEntity.status(200).body(new ApiResponse("Admin registered"));
-    }
-
     @GetMapping("/get-all-users")
     public ResponseEntity getAllUsers(@AuthenticationPrincipal MyUser user){
         return ResponseEntity.status(200).body(authService.getAllUsers());
